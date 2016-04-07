@@ -27,8 +27,10 @@ Route::get('recover', function(){
         foreach ($matches[1] as $key=>$value) {
             $avatar = $value;
         }
-        
+
+
         if ($avatar) {
+            $avatar = str_replace('/js/libs/kcfinder', 'js/libs/kcfinder', $avatar);
             $image = public_path($avatar);
             $ext = pathinfo($image, PATHINFO_EXTENSION);
             $imagePath = md5(time()).'.'.$ext;
