@@ -35,7 +35,7 @@ Route::get('recover', function(){
             $image = public_path($avatar);
             $ext = pathinfo($image, PATHINFO_EXTENSION);
             $imagePath = md5(time()).'.'.$ext;
-            Image::make($image)->save(public_path('files/images/'.$imagePath));
+            copy($image, public_path('files/images/'.$imagePath));
             $post->image = $imagePath;
             $post->save();
         }
