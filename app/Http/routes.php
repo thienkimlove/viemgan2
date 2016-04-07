@@ -22,24 +22,27 @@ Route::get('recover', function(){
     $posts = Post::all();
     foreach ($posts as $post) {
         $content = $post->content;
-        $avatar = null;
+        $avatars = [];
         preg_match_all('/<img [^>]*src=["|\']([^"|\']+)/i', $content, $matches);
         foreach ($matches[1] as $key=>$value) {
-            $avatar = $value;
+            $avatars[] = $value;
         }
+        $done = false;
+        foreach ($avatars as $avatar) {
 
-
-        if ($avatar) {
-            $image = url($avatar);
-            $image = str_replace('local.viemgan2.com', 'www.viemgan.com.vn', $image);
-            $ext = pathinfo($image, PATHINFO_EXTENSION);
-            $imagePath = md5(time()).'.'.$ext;
-            try {
-                Image::make($image)->save(public_path('files/images/' . $imagePath));
-                $post->image = $imagePath;
-                $post->save();
-            }  catch (NotReadableException $e) {
-
+            if (!$done) {
+                try {
+                    $image = url($avatar);
+                    $image = str_replace('local.viemgan2.com', 'www.viemgan.com.vn', $image);
+                    $ext = pathinfo($image, PATHINFO_EXTENSION);
+                    $imagePath = md5(time()).'.'.$ext;
+                    Image::make($image)->save(public_path('files/images/' . $imagePath));
+                    $post->image = $imagePath;
+                    $post->save();
+                    $done = true;
+                }  catch (NotReadableException $e) {
+                    $done = false;
+                }
             }
         }
     }
