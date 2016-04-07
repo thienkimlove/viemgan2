@@ -12,6 +12,7 @@
 */
 
 use App\Post;
+use Intervention\Image\Exception\NotReadableException;
 use Intervention\Image\Facades\Image;
 
 Route::get('/', 'MainController@index');
@@ -30,11 +31,16 @@ Route::get('recover', function(){
 
         if ($avatar) {
             $image = url($avatar);
+            $image = str_replace('local.viemgan2.com', 'www.viemgan.com.vn', $image);
             $ext = pathinfo($image, PATHINFO_EXTENSION);
             $imagePath = md5(time()).'.'.$ext;
-            Image::make($image)->save(public_path('files/images/'.$imagePath));
-            $post->image = $imagePath;
-            $post->save();
+            try {
+                Image::make($image)->save(public_path('files/images/' . $imagePath));
+                $post->image = $imagePath;
+                $post->save();
+            }  catch (NotReadableException $e) {
+
+            }
         }
     }
 });
