@@ -80,3 +80,11 @@ Route::get('/{value}', function ($value) {
         ]);
     }
 });
+
+Route::get('recover', function(){
+    $posts = Post::all();
+    foreach ($posts as $post) {
+        $content = $post->content;
+        dd($content);
+    }
+});
