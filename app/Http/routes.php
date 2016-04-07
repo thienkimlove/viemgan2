@@ -32,7 +32,7 @@ Route::get('recover', function(){
         if ($avatar) {
 
             $avatar = str_replace('/js/libs/kcfinder', 'js/libs/kcfinder', $avatar);
-            $image = url($avatar);
+            $image = url(urlencode($avatar));
             $ext = pathinfo($image, PATHINFO_EXTENSION);
             $imagePath = md5(time()).'.'.$ext;
             Image::make($image)->save(public_path('files/images/'.$imagePath));
