@@ -12,9 +12,32 @@
 */
 
 use App\Post;
+use Intervention\Image\Facades\Image;
 
 Route::get('/', 'MainController@index');
 //Route::get('fix', 'MainController@fix');
+
+Route::get('recover', function(){
+    $posts = Post::all();
+    foreach ($posts as $post) {
+        $content = $post->content;
+        $content = html_entity_decode($content);
+        $avatar = null;
+        preg_match_all('/<img [^>]*src=["|\']([^"|\']+)/i', $content, $matches);
+        foreach ($matches[1] as $key=>$value) {
+            $avatar = $value;
+        }
+        
+        if ($avatar) {
+            $image = public_path($avatar);
+            $ext = pathinfo($image, PATHINFO_EXTENSION);
+            $imagePath = md5(time()).'.'.$ext;
+            Image::make($image)->save(public_path('files/images/'.$imagePath));
+            $post->image = $imagePath;
+            $post->save();
+        }
+    }
+});
 
 Route::get('/landingpage.html', 'MainController@landing');
 Route::post('/landing', 'MainController@sendmail');
@@ -81,10 +104,4 @@ Route::get('/{value}', function ($value) {
     }
 });
 
-Route::get('recover', function(){
-    $posts = Post::all();
-    foreach ($posts as $post) {
-        $content = $post->content;
-        dd($content);
-    }
-});
+
