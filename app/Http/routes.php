@@ -21,7 +21,6 @@ Route::get('recover', function(){
     $posts = Post::all();
     foreach ($posts as $post) {
         $content = $post->content;
-        $content = html_entity_decode($content);
         $avatar = null;
         preg_match_all('/<img [^>]*src=["|\']([^"|\']+)/i', $content, $matches);
         foreach ($matches[1] as $key=>$value) {
@@ -30,9 +29,7 @@ Route::get('recover', function(){
 
 
         if ($avatar) {
-
-            $avatar = str_replace('/js/libs/kcfinder', 'js/libs/kcfinder', $avatar);
-            $image = url(urlencode($avatar));
+            $image = url($avatar);
             $ext = pathinfo($image, PATHINFO_EXTENSION);
             $imagePath = md5(time()).'.'.$ext;
             Image::make($image)->save(public_path('files/images/'.$imagePath));
