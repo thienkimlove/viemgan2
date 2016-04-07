@@ -30,6 +30,7 @@ Route::get('recover', function(){
 
 
         if ($avatar) {
+            $avatar = urldecode($avatar);
             $avatar = str_replace('/js/libs/kcfinder', 'js/libs/kcfinder', $avatar);
             $image = public_path($avatar);
             $ext = pathinfo($image, PATHINFO_EXTENSION);
