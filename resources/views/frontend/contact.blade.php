@@ -4,8 +4,13 @@
 @section('content')
     <div class="main-content" data-ng-controller="FaqController">
         <div class="col-left">
+            <ul class="breadCrumb clearFix">
+                <li><a href="{{url('/')}}">HOME</a></li>
+                <li class="active">Liên hệ</li>
+            </ul>
             <div class="box-contact">
                 <div class="col-left">
+
                     <h1 class="head">Viêm Gan</h1>
                     <ul>
                         <li><span class="icon-1"></span>Điện thoại: </li>

@@ -26,6 +26,10 @@
             <li>
                 <a class="{{ (!empty($page) && $page == 'contact') ? 'active' : '' }}" href="{{url('lien-he')}}" title=""><span>Liên hệ</span></a>
             </li>
+
+            <li>
+            <a class="{{ (!empty($page) && $page == 'video') ? 'active' : '' }}" href="{{url('video')}}" title=""><span>Video</span></a>
+            </li>
         </ul>
     </div>
 </nav>

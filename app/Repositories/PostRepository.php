@@ -27,6 +27,7 @@ class PostRepository extends BaseRepository
     {
         $post = $this->model->create([
             'title' => $request->input('title'),
+            'tieude' => $request->input('tieude'),
             'desc' => $request->input('desc'),
             'content' => $request->input('content'),
             'image' => ($request->file('image') && $request->file('image')->isValid()) ? $this->saveImage($request) : '',
@@ -34,8 +35,8 @@ class PostRepository extends BaseRepository
             'right' => ($request->input('right') == 'on') ? true : false,
             'right_block' => ($request->input('right_block') == 'on') ? true : false,
             'status' => ($request->input('status') == 'on') ? true : false,
-            'hot' => ($request->input('hot') == 'on') ? true : false,
-            'status' => false
+            'hot' => ($request->input('hot') == 'on') ? true : false,         
+            'related' => ($request->input('related') == 'on') ? true : false,         
         ]);
         $this->syncTags($post, $request);
         return $post;
@@ -61,6 +62,7 @@ class PostRepository extends BaseRepository
         $update = $request->all();
 
         $update['hot'] = (!empty($update['hot']) && $update['hot'] == 'on') ? true : false;
+        $update['related'] = (!empty($update['related']) && $update['related'] == 'on') ? true : false;
         $update['right'] = (!empty($update['right']) && $update['right'] == 'on') ? true : false;
         $update['right_block'] = (!empty($update['right_block']) && $update['right_block'] == 'on') ? true : false;
         $update['status'] = (!empty($update['status']) && $update['status'] == 'on') ? true : false;

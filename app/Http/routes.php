@@ -53,6 +53,7 @@ Route::post('/landing', 'MainController@sendmail');
 
 Route::get('/hoi-dap', 'MainController@faq');
 Route::get('/lien-he', 'MainController@contact');
+Route::get('/video', 'MainController@video');
 Route::get('admin', 'AdminController@index');
 Route::get('chuyen-muc/{tag}', 'MainController@categoryDetails');
 Route::get('tu-khoa/{tag}', 'MainController@tag');
@@ -102,11 +103,11 @@ Route::get('/{value}', function ($value) {
         $related = Post::where('status', true)
             ->where('category_id', $post->category_id)
             ->orderBy('updated_at', 'desc')
-            ->limit(3)
+            ->limit(5)
             ->get();
 
         return view('frontend.post_details', compact('post', 'related'))->with([
-            'meta_title' => $post->title . ' | Viemgan.com.vn ',
+            'meta_title' => ($post->tieude)? $post->tieude : $post->title . ' | Viemgan.com.vn',
             'meta_desc' => $post->desc,
             'meta_keywords' => ($post->tagList) ? implode(',', $post->tagList) : 'viemgan, huongdan, bai viet',
         ]);

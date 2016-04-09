@@ -31,7 +31,9 @@ class Post extends Model implements SluggableInterface {
         'views',
         'likes',
         'slug',
-        'right_block'
+        'right_block',
+        'tieude',
+        'related'
     ];
 
     /**

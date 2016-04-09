@@ -1,9 +1,14 @@
 @extends('frontend')
 
 @section('content')
+    <ul class="breadCrumb clearFix">
+        <li><a href="{{url('/')}}">HOME</a></li>
+        <li class="active">{{$category->name}}</li>
+    </ul>
     @include('frontend.top_news', ['latestPost' => $latestPost])
     <div class="main-content">
         <div class="col-left">
+
             <div class="box-medicine cf">
                 <h1 class="title">
                     <a href="{{url('chuyen-muc', $category->slug)}}"><span>{{$category->name}}</span></a>
@@ -27,6 +32,7 @@
                 {!! with(new \App\Pagination\AcmesPresenter($posts))->render() !!}
                 <div class="clear"></div>
             </div>
+            @include('frontend.tin_lien_quan', ['related' => $related])
             @include('frontend.banner', ['bannerPosition' => 4])
             <div class="clear"></div>
         </div><!--//col-left-->

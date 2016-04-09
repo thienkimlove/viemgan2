@@ -4,6 +4,10 @@
     <div class="main-content">
         <div class="main-content">
             <div class="col-left">
+                <ul class="breadCrumb clearFix">
+                    <li><a href="{{url('/')}}">HOME</a></li>
+                    <li class="active">Chia sẻ</li>
+                </ul>
                 <div class="title">
                     <span>Chia sẻ</span>
                 </div>

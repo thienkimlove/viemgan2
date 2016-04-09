@@ -9,6 +9,7 @@ use App\Http\Requests\RegisterEmailRequest;
 use App\Post;
 use App\Question;
 use App\Tag;
+use App\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -151,7 +152,15 @@ class MainController extends Controller
                 $posts = Post::where('status', true)->whereIn('category_id', $whereIn)->orderBy('updated_at', 'desc')->paginate(10);
                 $view = 'frontend.category_details';
             }
-            return view($view, compact('category', 'posts', 'latestPost', 'page'))->with([
+
+            $related = Post::where('status', true)
+                ->where('category_id', $category->id)
+                ->where('related', true)
+                ->orderBy('updated_at', 'desc')
+                ->limit(5)
+                ->get();
+            
+            return view($view, compact('category', 'posts', 'latestPost', 'page', 'related'))->with([
                 'meta_title' => $category->name,
                 'meta_desc' => '',
                 'meta_keywords' => $category->name,
@@ -168,6 +177,18 @@ class MainController extends Controller
             'meta_title' => ' Hỏi Đáp | Viemgan.com.vn ',
             'meta_desc' => '',
             'meta_keywords' => 'hỏi đáp',
+        ]);
+    }
+
+    public function video()
+    {
+        $page = 'video';
+        $latestPost = Post::where('status', true)->hot(true)->latest()->take(5)->get();
+        $videos = Video::latest()->paginate(10);
+        return view('frontend.video', compact('page', 'videos', 'latestPost'))->with([
+            'meta_title' => ' Video | Viemgan.com.vn ',
+            'meta_desc' => '',
+            'meta_keywords' => 'video',
         ]);
     }
 
