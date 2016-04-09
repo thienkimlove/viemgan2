@@ -7,7 +7,7 @@
 
         <ul class="breadCrumb clearFix">
             <li><a href="{{url('/')}}">HOME</a></li>
-            <a href="{{url('chuyen-muc', $post->category->slug)}}"><span>{{$post->category->name}}</span></a>
+            <li><a href="{{url('chuyen-muc', $post->category->slug)}}"><span>{{$post->category->name}}</span></a></li>
             <li class="active">{{$post->title}}</li>
         </ul>
 
