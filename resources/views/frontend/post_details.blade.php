@@ -4,6 +4,13 @@
 
 <div class="main-content">
     <div class="col-left">
+
+        <ul class="breadCrumb clearFix">
+            <li><a href="{{url('/')}}">HOME</a></li>
+            <li><a href="{{url('chuyen-muc', $post->category->slug)}}"><span>{{$post->category->name}}</span></a></li>
+            <li class="active">{{$post->title}}</li>
+        </ul>
+
         <div class="title">
             <span>{{$post->category->name}}</span>
         </div>
@@ -53,14 +60,7 @@
       @if ($post->tags->count() > 0)
       @include('frontend.post_tag', ['tags' => $post->tags])
       @endif
-        <div class="box-releated">
-            <h3>Tin liên quan</h3>
-            <ul class="list">
-                @foreach ($related as $post)
-                <li><a href="{{url($post->slug.'.html')}}">{{$post->title}}</a></li>
-                @endforeach
-            </ul>
-        </div>
+        @include('frontend.tin_lien_quan', ['related' => $related])
         <div class="box-form">
             <div class="fb-comments" data-href="{{url($post->slug.'.html')}}" data-numposts="5" data-colorscheme="light"></div>
             <div class="clear"></div>

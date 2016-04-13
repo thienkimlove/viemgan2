@@ -3,6 +3,12 @@
 @section('content')
     <div class="main-content">
         <div class="col-left">
+
+            <ul class="breadCrumb clearFix">
+                <li><a href="{{url('/')}}">HOME</a></li>
+                <li class="active">Từ khóa : {{$keyword}}</li>
+            </ul>
+
             <div class="title">
                 <span>Hiển thị kết quả tìm kiếm cho từ khóa <b>{{$keyword}}</b></span>
             </div>

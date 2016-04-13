@@ -22,6 +22,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Title</th>
+                                <th>Tiêu Đề</th>
                                 <th>Desc</th>
                                 <th>Image</th>
                                 <th>Category</th>
@@ -36,6 +37,7 @@
                                 <tr>
                                     <td>{{$post->id}}</td>
                                     <td>{{$post->title}}</td>
+                                    <td>{{$post->tieude}}</td>
                                     <td>{{$post->desc}}</td>
                                     <td>
                                         <img src="{{url('image-cached/size1/' .$post->image)}}" />

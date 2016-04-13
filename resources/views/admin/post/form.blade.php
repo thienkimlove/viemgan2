@@ -4,6 +4,16 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('tieude', 'Tiêu đề') !!}
+    {!! Form::text('tieude', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('related', 'Make post display in related of Category') !!}
+    {!! Form::checkbox('related', null, null) !!}
+</div>
+
+<div class="form-group">
     {!! Form::label('image', 'Image') !!}
     @if ($post->image)
         <img src="{{url('image-cached/size1/' .$post->image)}}" />
