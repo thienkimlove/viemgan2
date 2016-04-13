@@ -1,6 +1,6 @@
 <nav id="navGlobal">
     <div class="fix">
-        <ul class="cf">
+        <ul class="breadCrumb cf">
             <li>
                 <a class="{{ (!empty($page) && $page == 'index') ?  'active' : '' }}" href="{{url('/')}}" title="">
                     <span>HOME</span>
