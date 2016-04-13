@@ -241,6 +241,7 @@ img {
   text-transform: uppercase;
   padding: 15px 10px;
   color: #fff;
+  font-size: 12px;
 }
 #navGlobal ul > li a:hover, #navGlobal ul > li a.active {
   background: url(../images/bg_active.jpg) repeat-x;
