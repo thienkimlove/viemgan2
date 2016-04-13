@@ -4,7 +4,7 @@
 @section('content')
     <div class="main-content" data-ng-controller="FaqController">
         <div class="col-left">
-            <ul class="breadCrumb clearFix">
+            <ul class="breadCrumb cf">
                 <li><a href="{{url('/')}}">HOME</a></li>
                 <li class="active">Liên hệ</li>
             </ul>

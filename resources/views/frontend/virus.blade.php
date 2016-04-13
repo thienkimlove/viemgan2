@@ -1,7 +1,7 @@
 @extends('frontend')
 
 @section('content')
-    <ul class="breadCrumb clearFix">
+    <ul class="breadCrumb cf">
         <li><a href="{{url('/')}}">HOME</a></li>
         <li class="active">{{$category->name}}</li>
     </ul>
