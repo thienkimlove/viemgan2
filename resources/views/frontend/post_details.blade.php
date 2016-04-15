@@ -60,7 +60,7 @@
       @if ($post->tags->count() > 0)
       @include('frontend.post_tag', ['tags' => $post->tags])
       @endif
-        @include('frontend.tin_lien_quan', ['related' => $related])
+        @include('frontend.tin_lien_quan', ['related' => $related, 'additionPost' => $additionPost])
         <div class="box-form">
             <div class="fb-comments" data-href="{{url($post->slug.'.html')}}" data-numposts="5" data-colorscheme="light"></div>
             <div class="clear"></div>

@@ -100,13 +100,31 @@ Route::get('/{value}', function ($value) {
         $origin->views = $origin->views + 1;
         $origin->save();
 
+        $post_tag = $post->tags->lists('id')->all();
+
         $related = Post::where('status', true)
-            ->where('category_id', $post->category_id)
+            ->whereHas('tags', function($q) use ($post_tag){
+               $q->whereIn('id', $post_tag);
+           })
+            ->where('id', '!=', $post->id)
             ->orderBy('updated_at', 'desc')
             ->limit(5)
-            ->get();
+            ->get();      
 
-        return view('frontend.post_details', compact('post', 'related'))->with([
+        $additionPost = null;
+
+        if ($related->count() < 5) {
+            $categoryLimit = 5- $related->count();
+            $additionPost = Post::where('category_id', $post->category_id)
+                ->where('status', true)
+                ->where('id', '!=', $post->id)
+                ->latest('updated_at')
+                ->limit($categoryLimit)
+                ->get();
+        }
+        
+
+        return view('frontend.post_details', compact('post', 'related', 'additionPost'))->with([
             'meta_title' => ($post->tieude)? $post->tieude : $post->title . ' | Viemgan.com.vn',
             'meta_desc' => $post->desc,
             'meta_keywords' => ($post->tagList) ? implode(',', $post->tagList) : 'viemgan, huongdan, bai viet',
