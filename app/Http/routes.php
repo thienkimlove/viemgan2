@@ -100,7 +100,7 @@ Route::get('/{value}', function ($value) {
         $origin->views = $origin->views + 1;
         $origin->save();
 
-        $post_tag = $post->tags->lists('id')->all();
+        $post_tag = $post->tags->lists('id');
 
         $related = Post::where('status', true)
             ->whereHas('tags', function($q) use ($post_tag){
