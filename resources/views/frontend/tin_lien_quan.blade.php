@@ -11,7 +11,7 @@
         </article>
     @endforeach
 
-    @if ($additionPost)
+    @if (isset($additionPost) && $additionPost)
         @foreach ($additionPost as $post)
             <article class="item">
                 <a href="{{url($post->slug.'.html')}}" title="{{$post->title}}">
