@@ -1,7 +1,7 @@
 <div class="box-releated">
     <h3>Tin liên quan</h3>
     @foreach ($related as $post)
-        <article class="item">
+        <article class="item cf">
             <a href="{{url($post->slug.'.html')}}" title="{{$post->title}}">
                 <img src="{{url('image-cached/size4/' .$post->image)}}" />
             </a>
@@ -13,7 +13,7 @@
 
     @if (isset($additionPost) && $additionPost)
         @foreach ($additionPost as $post)
-            <article class="item">
+            <article class="item cf">
                 <a href="{{url($post->slug.'.html')}}" title="{{$post->title}}">
                     <img src="{{url('image-cached/size4/' .$post->image)}}" />
                 </a>
