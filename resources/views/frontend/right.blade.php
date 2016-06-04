@@ -33,12 +33,13 @@
                             </div>
                         @endforeach
                     </div>
+                    @include('frontend.banner', ['bannerPosition' => 3])
                 @endif
             </div>
         </div>
     @endif
 
-    @if (!empty($page) && $page == 'index')
+    @if (!empty($page) && ($page == 'index' || $page == 'post_details'))
         @include('frontend.most_question')
     @endif
 
@@ -53,9 +54,7 @@
     @else
         @include('frontend.most_read_normal')
     @endif
-    @if (empty($page) || $page != 'index')
-        @include('frontend.most_rates')
-    @endif
+   
 
     
 
