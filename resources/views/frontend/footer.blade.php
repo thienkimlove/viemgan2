@@ -28,10 +28,9 @@
     </div>
     <div class="copyRight">
         <div class="container">
-            <p class="copy">MỌI THÔNG TIN ĐỀU BẢN QUYỀN ĐỀU THUỘC VỀ CÔNG TY TNHH TUỆ LINH</p>
+            <p class="copy">MỌI THÔNG TIN ĐỀU BẢN QUYỀN ĐỀU THUỘC VỀ VIEMGAN.COM.VN</p>
             <p class="address">
-                Tầng 5, Tòa nhà 29 T1 - Hoàng Đạo Thúy - Trung Hòa - Cầu Giấy - Hà Nội- Điện thoại: (04) 62824344 - Fax: 04.62824263
-            </p>
+                Điện thoại: 1900 6482 - 0912 571 190 </p>
         </div>
     </div>
 </footer>
