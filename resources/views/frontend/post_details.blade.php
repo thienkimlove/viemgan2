@@ -11,9 +11,9 @@
             <li class="active">{{$post->title}}</li>
         </ul>
 
-        <div class="title">
+        <!-- <div class="title">
             <span>{{$post->category->name}}</span>
-        </div>
+        </div> -->
         <article class="box-detail">
             <h1 class="head">{{$post->title}}</h1>
             <div class="utility">
@@ -31,7 +31,7 @@
             {!!$post->content!!}
         </article><!--//box-detail-->
         @include('frontend.banner', ['bannerPosition' => 4])
-		<script>
+        <script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1569708656596422',
@@ -65,6 +65,10 @@
             <div class="fb-comments" data-href="{{url($post->slug.'.html')}}" data-numposts="5" data-colorscheme="light"></div>
             <div class="clear"></div>
         </div><!--//box-form-->
+        <ul class="listButton cf">
+          <li class="ilocal"><a href="#">Xem di?m bán</a></li>
+          <li class="icall"><a href="#">1900 6482 - 0912 571 190</a></li>
+        </ul>
         @include('frontend.below')
         <div class="clear"></div>
     </div><!--//col-left-->

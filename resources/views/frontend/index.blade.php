@@ -1,15 +1,15 @@
-@extends('frontend')
+﻿@extends('frontend')
 
 @section('content')
 @include('frontend.top_news', ['latestPost' => $latestPost])
 <div class="main-content">
     <div class="col-left">
         <div class="box-summary cf">
-            <h3 class="title">
-                <span>Các bệnh về gan</span>
-            </h3>
             @if ($first = $rootBlock['posts']->shift())
             <article class="item-summary">
+                <h3 class="title">
+                    <span>Các bệnh về gan</span>
+                </h3>
                 <a href="{{url($first->slug.'.html')}}" title="" class="thumb-img">
                     <img src="{{url('image-cached/size2/' .$first->image)}}" />
                 </a>
@@ -94,7 +94,7 @@
 
 
             <div class="data">
-                <div class="item">
+                <div class="item pr0">
                     @if ($column = $top2Block['posts']->slice(3, 3))
                         @if ($first = $column->shift())
                             <div class="block-m">
