@@ -13,23 +13,24 @@
                         {!! $firstVideo->code !!}
                     </div>
 
-                    <span>{{$firstVideo->title}}</span> <br/>
+                    <h3 class="titleVideo">{{$firstVideo->title}}</h3>
 
-                    <span>{{$firstVideo->views}} lượt xem</span>
+                    <p class="countVideo">{{$firstVideo->views}} lượt xem</p>
                 </div>
                 @if (!empty($page) && ($page == 'index' || $page == 'post_details'))
                     <div class="data">
                         @foreach ($videos as $video)
-                            <div class="item">
-                                <div class="block-m">
+                            <div class="item cf">
+                                <div class="block-videos cf">
                                     <a href="{{url('video', $video->slug)}}" class="thumb-img">
                                         <img src="{{url('image-cached/size1', $video->image)}}" alt="">
                                     </a>
+                                    <h3 class="titleVideo">{{str_limit($video->title, 65)}}</h3>
+
+                                    <p>{{$video->views}} lượt xem</p>
                                 </div>
 
-                                <span>{{$video->title}}</span> <br/>
-
-                                <span>{{$video->views}} lượt xem</span>
+                                
                             </div>
                         @endforeach
                     </div>

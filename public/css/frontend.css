@@ -114,7 +114,14 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+iframe[name='google_conversion_frame'] { 
+    height: 0 !important;
+    width: 0 !important; 
+    line-height: 0 !important; 
+    font-size: 0 !important;
+    margin-top: -13px;
+    float: left;
+}
 .cf:after, .fix:after, .main-content .col-left .news-type:after, .box-event .item:after, .box-filter:after {
   clear: both;
 }
@@ -127,14 +134,7 @@ img {
   display: table;
   content: "";
 }
-iframe[name='google_conversion_frame'] { 
-    height: 0 !important;
-    width: 0 !important; 
-    line-height: 0 !important; 
-    font-size: 0 !important;
-    margin-top: -13px;
-    float: left;
-}
+
 .header-bot .option-menu, .menu-left .inner .search .search-in .txt, .box-search .keyword, .box-contact .col-right .txt {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -299,7 +299,6 @@ iframe[name='google_conversion_frame'] {
   height: 86px;
   text-indent: -9090px;
   background: url(../images/sprite.png) no-repeat 0px -370px;
-  float: left;
   float: left;
   z-index: 10;
 }
@@ -1065,21 +1064,35 @@ iframe[name='google_conversion_frame'] {
 }
 .main-content .col-left .box-releated {
   margin-bottom: 20px;
+  background: #f3f3f3;
+  border: 1px solid #bfe5d0;
 }
-.main-content .col-left .box-releated h3 {
-  border-bottom: 1px solid #ccc;
+.main-content .col-left .box-releated > h3 {
   font-size: 16px;
-  margin: 0 10px 10px 0;
+  display: inline-block;
+  text-align: center;
+  background: #1fa007;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  margin-bottom: 10px;
+  min-width: 200px;
 }
 .main-content .col-left .box-releated .item {
   margin-bottom: 20px;
+  padding: 0 15px 0;
 }
 .main-content .col-left .box-releated .item h3{
-  border: none;
+  font-size: 14px;
+  font-weight: normal;
+  background: none;
+  text-align: left;
 }
 .main-content .col-left .box-releated .item a{
   float: left;
   margin-right: 20px;
+  background: url('../images/list-dot.png') left 5px no-repeat;
+  padding-left: 15px;
 }
 .main-content .col-left .box-releated .list {
   list-style: none;
@@ -1237,17 +1250,16 @@ iframe[name='google_conversion_frame'] {
   /* display: table-cell; */
   float: left;
   width: 48%;
-  margin: 0 1%;
-  color: #39b54a;
+  margin-right: 2%;
   border: 1px solid #39b54a;
   padding: 15px 0 20px 0;
   position: relative;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+}
+.listButton li:last-child {
+  margin-right: 0;
 }
 .listButton li.ilocal:before {
   content: "";
@@ -1280,6 +1292,28 @@ iframe[name='google_conversion_frame'] {
 }
 .box-video .videoBoxIn {
   display: inline-block;
+  margin-bottom: 20px;
+}
+.box-video .videoBoxIn .titleVideo {
+  text-align: left;
+  line-height: 22px;
+  padding-left: 20px;
+}
+.box-video .block-videos {
+  padding-left: 20px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.box-video .block-videos a {
+  float: left;
+  margin-right: 10px;
+}
+.box-video .videoBoxIn .countVideo {
+  text-align: left;
+  font-size: 12px;
+  padding-left: 20px;
 }
 .box-video .videoBoxInObject {
   max-width: 727px;
@@ -1333,6 +1367,9 @@ iframe[name='google_conversion_frame'] {
 .box-medicine .data .item.pr0 {
   padding-right: 0;
 }
+.box-medicine .data .item.pr0 {
+  padding-right: 0;
+}
 .box-medicine .data .item.flr {
   float: right;
   padding-right: 0;
@@ -1378,7 +1415,7 @@ iframe[name='google_conversion_frame'] {
   position: relative;
   width: 100%;
   float: left;
-  margin-bottom: 10px;
+  margin: 10px 0;
   padding-left: 5px;
 }
 .box-medicine .data .list-medicine .number-post {
@@ -2451,8 +2488,8 @@ iframe[name='google_conversion_frame'] {
 .footer .listSocial li a {
   display: block;
   text-indent: -9090px;
-  height: 45px;
-  width: 45px;
+  height: 75px;
+  width: 75px;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;

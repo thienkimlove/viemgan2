@@ -1,4 +1,4 @@
-@extends('frontend')
+﻿@extends('frontend')
 
 @section('content')
 
@@ -30,6 +30,10 @@
             </div>
             {!!$post->content!!}
         </article><!--//box-detail-->
+		 <ul class="listButton cf">
+          <li class="ilocal"><a href="#">Xem điểm bán</a></li>
+          <li class="icall"><a href="#">1900 6482 - 0912 571 190</a></li>
+        </ul>
         @include('frontend.banner', ['bannerPosition' => 4])
 
         <div class="box-share">
@@ -49,11 +53,6 @@
             <div class="fb-comments" data-href="{{url($post->slug.'.html')}}" data-numposts="5" data-colorscheme="light"></div>
             <div class="clear"></div>
         </div><!--//box-form-->
-        <ul class="listButton cf">
-          <li class="ilocal"><a href="#">Xem điểm bán</a></li>
-          <li class="icall"><a href="#">1900 6482 - 0912 571 190</a></li>
-        </ul>
-
         <div class="box-medicine cf">
             <div class="data">
                 <div class="item">
@@ -74,7 +73,7 @@
                 </div>
             </div>
             <div class="data">
-                <div class="item">
+                <div class="item pr0">
                     <div class="title">
                         <a href="{{url('chuyen-muc', 'duoc-lieu-voi-benh-gan')}}"><span>Dược liệu với bệnh Gan</span></a>
                     </div>
