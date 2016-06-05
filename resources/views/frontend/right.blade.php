@@ -10,7 +10,9 @@
             <div class="box-video">
                 <div class="videoBoxIn">
                     <div class="videoBoxInObject">
-                        {!! $firstVideo->code !!}
+                        <a href="{{url('video', $firstVideo->slug)}}" class="thumb-img">
+                            <img src="{{url('image-cached/size1', $firstVideo->image)}}" alt="">
+                        </a>
                     </div>
 
                     <h3 class="titleVideo"><a href="{{url('video', $firstVideo->slug)}}">{{ $firstVideo->title }}</a></h3>
