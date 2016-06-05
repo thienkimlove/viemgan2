@@ -10,18 +10,23 @@
     @include('frontend.top_news', ['latestPost' => $latestPost])
     <div class="main-content">
         <div class="col-left">
+            @if ($mainVideo)
+            <div style="margin: auto;width: 80%;padding: 10px;">
+                <h1 class="title">
+                    <span>{{$mainVideo->title}}</span>
+                </h1>
 
+
+               <div style="margin: auto;width: 100%">
+                     {!! $mainVideo->code !!}
+                </div>
+
+            </div>
+            @endif
             <div class="box-medicine cf">
                 <h1 class="title">
                     <span>Video</span>
                 </h1>
-                @if ($mainVideo)
-                    <h2 class="title">
-                        <span>Main Video</span>
-                    </h2>
-                    <div>{!! $mainVideo->code !!}</div>
-                @endif
-
                 @foreach ($videos as $video)
                     <div class="data">
                         <div class="item">

@@ -13,7 +13,7 @@
                         {!! $firstVideo->code !!}
                     </div>
 
-                    <h3 class="titleVideo">{{$firstVideo->title}}</h3>
+                    <h3 class="titleVideo"><a href="{{url('video', $firstVideo->slug)}}">{{ $firstVideo->title }}</a></h3>
 
                     <p class="countVideo">{{$firstVideo->views}} lượt xem</p>
                 </div>
@@ -25,9 +25,8 @@
                                     <a href="{{url('video', $video->slug)}}" class="thumb-img">
                                         <img src="{{url('image-cached/size1', $video->image)}}" alt="">
                                     </a>
-                                    <h3 class="titleVideo">{{str_limit($video->title, 65)}}</h3>
-
-                                    <p>{{$video->views}} lượt xem</p>
+                                    <h3 class="titleVideo"><a href="{{url('video', $video->slug)}}">{{$video->title}}</a></h3>
+                                    <p class="countVideo">{{$video->views}} lượt xem</p>
                                 </div>
 
                                 
