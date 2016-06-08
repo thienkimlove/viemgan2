@@ -67,6 +67,10 @@ return array(
         'size6' => function($image) {
             return $image->fit(282, 167);
         },
+        'size7' => function($image) {
+            return $image->fit(300, 209);
+        },
+  
 
     ),
 

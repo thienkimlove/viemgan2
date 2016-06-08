@@ -11,13 +11,13 @@
     <div class="main-content">
         <div class="col-left">
             @if ($mainVideo)
-            <div style="margin: auto;width: 80%;padding: 10px;">
+            <div class="video-show">
                 <h1 class="title">
                     <span>{{$mainVideo->title}}</span>
                 </h1>
 
 
-               <div style="margin: auto;width: 100%">
+               <div class="full-video">
                      {!! $mainVideo->code !!}
                 </div>
 

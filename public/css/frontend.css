@@ -1306,7 +1306,7 @@ iframe[name='google_conversion_frame'] {
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
-.box-video .block-videos a {
+.box-video .block-videos .thumb-videos {
   float: left;
   margin-right: 10px;
 }
@@ -1325,7 +1325,15 @@ iframe[name='google_conversion_frame'] {
 .box-video .videoBoxInObject > span {
   display: block !important;
 }
-
+.box-video .videoBoxInObject .thumb-img img {
+  width: inherit;
+}
+.video-show {
+  margin: 0 10px 10px 0;
+}
+.video-show .full-video iframe{
+  width: 100%;
+}
 .area-social .social {
   float: right;
   /* margin-right: 35px; */

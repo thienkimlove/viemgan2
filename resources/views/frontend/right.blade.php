@@ -3,15 +3,13 @@
         <div class="right-in">
             <h3 class="title">
               <span class="gray">
-               Góc Video
-              </span>
-            </h3>
+              Góc Video             </span>            </h3>
 
             <div class="box-video">
                 <div class="videoBoxIn">
                     <div class="videoBoxInObject">
-                        <a href="{{url('video', $firstVideo->slug)}}" class="thumb-img">
-                            <img src="{{url('image-cached/size1', $firstVideo->image)}}" alt="">
+                        <a href="{{url('video', $firstVideo->slug)}}">
+                            <img src="{{url('image-cached/size7', $firstVideo->image)}}" alt="">
                         </a>
                     </div>
 
@@ -24,7 +22,7 @@
                         @foreach ($videos as $video)
                             <div class="item cf">
                                 <div class="block-videos cf">
-                                    <a href="{{url('video', $video->slug)}}" class="thumb-img">
+                                    <a href="{{url('video', $video->slug)}}" class="thumb-videos">
                                         <img src="{{url('image-cached/size1', $video->image)}}" alt="">
                                     </a>
                                     <h3 class="titleVideo"><a href="{{url('video', $video->slug)}}">{{$video->title}}</a></h3>
