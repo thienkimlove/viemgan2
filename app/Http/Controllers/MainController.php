@@ -54,7 +54,7 @@ class MainController extends Controller
                     ->whereIn('category_id', $whereIn)
                     ->whereNotIn('id', $idArrays)
                     ->latest()
-                    ->take(9)
+                    ->take(5)
                     ->get();
             }
 
