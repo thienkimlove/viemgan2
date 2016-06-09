@@ -21,6 +21,7 @@ class MainController extends Controller
         $page = 'index';
 
         $latestPost = Post::where('status', true)->hot(true)->latest()->take(5)->get();
+        
         $idArrays = [];
         foreach ($latestPost as $post) {
             $idArrays[] = $post->id;
@@ -180,12 +181,25 @@ class MainController extends Controller
         ]);
     }
 
-    public function video()
+    /**
+     * @param null $value
+     * @return mixed
+     */
+    public function video($value = null)
     {
         $page = 'video';
+        $mainVideo = null;
+        if ($value) {
+            $mainVideo = Video::whereSlug($value)->get();
+            
+            if ($mainVideo->count() > 0) {
+                $mainVideo = $mainVideo->first();
+                $mainVideo->increment('views', 1);
+            }
+        }
         $latestPost = Post::where('status', true)->hot(true)->latest()->take(5)->get();
         $videos = Video::latest()->paginate(10);
-        return view('frontend.video', compact('page', 'videos', 'latestPost'))->with([
+        return view('frontend.video', compact('page', 'videos', 'latestPost', 'mainVideo'))->with([
             'meta_title' => ' Video | Viemgan.com.vn ',
             'meta_desc' => '',
             'meta_keywords' => 'video',

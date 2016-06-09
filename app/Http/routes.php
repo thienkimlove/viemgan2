@@ -53,7 +53,7 @@ Route::post('/landing', 'MainController@sendmail');
 
 Route::get('/hoi-dap', 'MainController@faq');
 Route::get('/lien-he', 'MainController@contact');
-Route::get('/video', 'MainController@video');
+Route::get('/video/{value?}', 'MainController@video');
 Route::get('admin', 'AdminController@index');
 Route::get('chuyen-muc/{tag}', 'MainController@categoryDetails');
 Route::get('tu-khoa/{tag}', 'MainController@tag');
@@ -96,9 +96,10 @@ Route::controllers([
 
 Route::get('/{value}', function ($value) {
     if (preg_match('/([a-z0-9\-]+)\.html/', $value, $matches)) {
-        $origin = $post = Post::where('slug', $matches[1])->first();
-        $origin->views = $origin->views + 1;
-        $origin->save();
+        $page = 'post_details';
+        $post = Post::where('slug', $matches[1])->first();
+
+        $post->increment('views', 1);
 
         $post_tag = $post->tags->lists('id');
 
@@ -122,9 +123,29 @@ Route::get('/{value}', function ($value) {
                 ->limit($categoryLimit)
                 ->get();
         }
-        
 
-        return view('frontend.post_details', compact('post', 'related', 'additionPost'))->with([
+        $relatedYkien = Post::where('status', true)
+            ->whereHas('tags', function($q) use ($post_tag){
+                $q->whereIn('id', $post_tag);
+            })
+            ->where('id', '!=', $post->id)
+            ->where('category_id', 12)
+            ->orderBy('updated_at', 'desc')
+            ->limit(3)
+            ->get();
+
+        $relatedDuocLieu = Post::where('status', true)
+            ->whereHas('tags', function($q) use ($post_tag){
+                $q->whereIn('id', $post_tag);
+            })
+            ->where('id', '!=', $post->id)
+            ->where('category_id', 2)
+            ->orderBy('updated_at', 'desc')
+            ->limit(3)
+            ->get();
+
+
+        return view('frontend.post_details', compact('page', 'post', 'related', 'additionPost', 'relatedDuocLieu', 'relatedYkien'))->with([
             'meta_title' => ($post->tieude)? $post->tieude : $post->title . ' | Viemgan.com.vn',
             'meta_desc' => $post->desc,
             'meta_keywords' => ($post->tagList) ? implode(',', $post->tagList) : 'viemgan, huongdan, bai viet',

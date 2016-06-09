@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h2>Add New Video</h2>
-            {!! Form::model($video = new App\Video, ['route' => ['admin.videos.store']]) !!}
+            {!! Form::model($video = new App\Video, ['route' => ['admin.videos.store'], 'files' => true]) !!}
             @include('admin.video.form', ['submitText' => 'Add Video'])
             {!! Form::close() !!}
             @include('errors.list')

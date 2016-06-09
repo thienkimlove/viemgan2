@@ -30,25 +30,30 @@
 
         </div>
         @include('frontend.banner', ['bannerPosition' => 1])
-        <div class="box-best-product cf">
-            <h3 class="title">
-                <a href="{{url('chuyen-muc', $top1Block['category']->slug)}}"><span>{{$top1Block['category']->name}}</span></a>
-            </h3>
-            <div class="list-product">
-                @foreach ($top1Block['posts']->chunk(3) as $groupPost)
-                    <div class="row cf">
-                        @foreach ($groupPost as $post)
-                        <article class="item">
-                            <a href="{{url($post->slug.'.html')}}" class="thumb-img">
-                                <img src="{{url('image-cached/size3/' .$post->image)}}" />
-                            </a>
-
-                            <h3><a href="{{url($post->slug.'.html')}}">{{str_limit($post->title, 50)}}</a></h3>
-                        </article>
-                        @endforeach
-                    </div>
+        <div class="box-summary cf">
+            @if ($first = $top1Block['posts']->shift())
+                <article class="item-summary">
+                    <h3 class="title">
+                        <span>Thông tin khoa học</span>
+                    </h3>
+                    <a href="{{url($first->slug.'.html')}}" title="" class="thumb-img">
+                        <img src="{{url('image-cached/size2/' .$first->image)}}" />
+                    </a>
+                    <h3>{{str_limit($first->title, 50)}}</h3>
+                    <p>{{str_limit($first->desc, 150)}}</p>
+                </article>
+            @endif
+            <div class="item-list">
+                @foreach($top1Block['posts'] as $post)
+                    <article class="block">
+                        <a href="{{$post->slug.'.html'}}" class="thumb">
+                            <img src="{{url('image-cached/size1/' .$post->image)}}" />
+                        </a>
+                        <h3><a href="{{$post->slug.'.html'}}">{{str_limit($post->title, 50)}}</a></h3>
+                    </article>
                 @endforeach
             </div>
+
         </div>
         <div class="box-medicine cf">
             <h3 class="title">

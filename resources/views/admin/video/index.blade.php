@@ -11,6 +11,8 @@
                             <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Title</th>
+                                <th>Image</th>
                                 <th>Code</th>
                                 <th>Action</th>
                             </tr>
@@ -19,6 +21,8 @@
                             @foreach($videos as $video)
                                 <tr>
                                     <td>{{$video->id}}</td>
+                                    <td>{{$video->title}}</td>
+                                    <td><img src="{{url('image-cached/size1', $video->image)}}" /></td>
                                     <td>{{$video->code}}</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm" data-ng-click="goUrl('/videos/{{$video->id}}/edit')" type="button">Edit</button>

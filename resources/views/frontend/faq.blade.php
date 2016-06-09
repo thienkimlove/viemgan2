@@ -6,10 +6,10 @@
             <div class="col-left">
                 <ul class="breadCrumb cf">
                     <li><a href="{{url('/')}}">HOME</a></li>
-                    <li class="active">Chia sẻ</li>
+                    <li class="active">Hỏi đáp</li>
                 </ul>
                 <div class="title">
-                    <span>Chia sẻ</span>
+                    <span>Hỏi đáp</span>
                 </div>
                 <div class="box-faq">
                     <?php $i = 0; ?>

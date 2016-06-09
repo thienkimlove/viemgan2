@@ -1,5 +1,5 @@
 ﻿<div class="col-right">
-    @if ($video)
+    @if ($firstVideo = $videos->shift())
         <div class="right-in">
             <h3 class="title">
               <span class="gray">
@@ -10,9 +10,30 @@
             <div class="box-video">
                 <div class="videoBoxIn">
                     <div class="videoBoxInObject">
-                        {!! $video->code !!}
+                        {!! $firstVideo->code !!}
                     </div>
+
+                    <span>{{$firstVideo->title}}</span> <br/>
+
+                    <span>{{$firstVideo->views}} lượt xem</span>
                 </div>
+                @if (!empty($page) && ($page == 'index' || $page == 'post_details'))
+                    <div class="data">
+                        @foreach ($videos as $video)
+                            <div class="item">
+                                <div class="block-m">
+                                    <a href="{{url('video', $video->slug)}}" class="thumb-img">
+                                        <img src="{{url('image-cached/size1', $video->image)}}" alt="">
+                                    </a>
+                                </div>
+
+                                <span>{{$video->title}}</span> <br/>
+
+                                <span>{{$video->views}} lượt xem</span>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
             </div>
         </div>
     @endif

@@ -3,12 +3,25 @@
 use App\Http\Requests;
 use App\Http\Requests\VideoRequest;
 use App\Video;
+use Intervention\Image\Facades\Image;
 
 class VideosController extends Controller {
 
     public function __construct()
     {
         $this->middleware('admin');
+    }
+    protected function saveImage($request, $old = null)
+    {
+        $filename = md5(time()) . '.' . $request->file('image')->getClientOriginalExtension();
+        $img = Image::make($request->file('image')->getRealPath());
+        // resize the image to a width of 300 and constrain aspect ratio (auto height)
+        $img->save(public_path() . '/files/images/' . $filename);
+
+        if ($old) {
+            @unlink(public_path() . '/files/images/' . $old);
+        }
+        return $filename;
     }
 	public function index()
 	{
@@ -29,7 +42,9 @@ class VideosController extends Controller {
      */
     public function store(VideoRequest $request)
     {
-        Video::create($request->all());
+        $data = $request->all();
+        $data['image'] = ($request->file('image') && $request->file('image')->isValid()) ? $this->saveImage($request) : '';
+        Video::create($data);
         flash('Create video success!', 'success');
         return redirect('admin/videos');
     }
@@ -68,7 +83,12 @@ class VideosController extends Controller {
     public function update($id, VideoRequest $request)
     {
         $video =  Video::findOrFail($id);
-        $video->update($request->all());
+        $data = $request->all();
+        if ($request->file('image') && $request->file('image')->isValid()) {
+            $data['image'] = $this->saveImage($request);
+        }
+        $video->update($data);
+        
         flash('Edit video success!', 'success');
         return redirect('admin/videos');
     }

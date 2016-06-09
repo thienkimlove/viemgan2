@@ -57,13 +57,23 @@ window._fbq.push(['track', '6030780499151', {'value':'0.00','currency':'VND'}]);
 </head>
 <body class="home" data-ng-controller="MainController">
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1569708656596422',
+            xfbml      : true,
+            version    : 'v2.5'
+        });
+    };
+
+    (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
+        if (d.getElementById(id)) {return;}
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=1569708656596422";
+        js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 <div class="wrapper" id="wrapper">
     @include('frontend.header')
     @include('frontend.nav')
@@ -83,6 +93,26 @@ window._fbq.push(['track', '6030780499151', {'value':'0.00','currency':'VND'}]);
 <script type="text/javascript" src="{{url('/js/frontend.js')}}"></script>
 <script type="text/javascript" src="{{url('/js/frontend-custom.js')}}"></script>
 <script type='text/javascript'>window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;t.push(["_setAccount",13099]);var n=e.location.protocol=="https:"?"https:":"http:";var r=document.createElement("script");r.type="text/javascript";r.async=true;r.src=n+"//static.subiz.com/public/js/loader.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)}(window);</script>
+<script type="text/javascript" src="//admicro1.vcmedia.vn/cpa/admicro.js"></script><script type="text/javascript">window.admicro_cpa_q = window.admicro_cpa_q || [];window.admicro_cpa_q.push({event: "retargeting", id: 1633});
+</script>
+
+
+    <script type="text/javascript">
+        (function () {
+            var _eclickq = window._eclickq || (window._eclickq = []);
+            if (!_eclickq.loaded) {
+                var eclickTracking = document.createElement('script');
+                eclickTracking.async = true;
+                eclickTracking.src = ('https:'==document.location.protocol?'https:':'http:')+'//s.eclick.vn/delivery/retargeting.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(eclickTracking, s);
+                _eclickq.loaded = true;
+            }
+            _eclickq.push(['addPixelId', 11651]);
+        })();
+        window._eclickq = window._eclickq || [];
+        window._eclickq.push(['track', 'PixelInitialized', {}]);
+    </script>
 @yield('footer')
 @include('frontend.outside')
 </body>

@@ -15,6 +15,13 @@
                 <h1 class="title">
                     <span>Video</span>
                 </h1>
+                @if ($mainVideo)
+                    <h2 class="title">
+                        <span>Main Video</span>
+                    </h2>
+                    <div>{!! $mainVideo->code !!}}</div>
+                @endif
+
                 @foreach ($videos as $video)
                     <div class="data">
                         <div class="item">

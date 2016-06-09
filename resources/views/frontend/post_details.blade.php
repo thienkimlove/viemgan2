@@ -31,23 +31,7 @@
             {!!$post->content!!}
         </article><!--//box-detail-->
         @include('frontend.banner', ['bannerPosition' => 4])
-        <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1569708656596422',
-      xfbml      : true,
-      version    : 'v2.5'
-    });
-  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
         <div class="box-share">
             <div class="item">
                 <div class="fb-like" data-href="http://www.viemgan.com.vn" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
@@ -66,10 +50,50 @@
             <div class="clear"></div>
         </div><!--//box-form-->
         <ul class="listButton cf">
-          <li class="ilocal"><a href="#">Xem di?m b�n</a></li>
+          <li class="ilocal"><a href="#">Xem di?m b�n</a></li>
           <li class="icall"><a href="#">1900 6482 - 0912 571 190</a></li>
         </ul>
-        @include('frontend.below')
+
+        <div class="box-medicine cf">
+            <div class="data">
+                <div class="item">
+                    <div class="title">
+                        <a href="{{url('chuyen-muc', 'y-kien-chuyen-gia')}}"><span>Ý kiến chuyên gia</span></a>
+                    </div>
+                    @foreach($relatedYkien as $post)
+                        <div class="list-medicine">
+                            <a href="{{url($post->slug . '.html')}}" class="thumb">
+                                <img src="{{url('image-cached/size1/' .$post->image)}}" />
+                            </a>
+                            <h3><a href="{{url($post->slug . '.html')}}">{{str_limit($post->title, 40)}}</a></h3>
+                            <p>
+                                {{str_limit($post->desc, 70)}}
+                            </p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="data">
+                <div class="item">
+                    <div class="title">
+                        <a href="{{url('chuyen-muc', 'duoc-lieu-voi-benh-gan')}}"><span>Dược liệu với bệnh Gan</span></a>
+                    </div>
+                    @foreach($relatedDuocLieu as $post)
+                        <div class="list-medicine">
+                            <a href="{{url($post->slug . '.html')}}" class="thumb">
+                                <img src="{{url('image-cached/size1/' .$post->image)}}" />
+                            </a>
+                            <h3><a href="{{url($post->slug . '.html')}}">{{str_limit($post->title, 40)}}</a></h3>
+                            <p>
+                                {{str_limit($post->desc, 70)}}
+                            </p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+        @include('frontend.banner', ['bannerPosition' => 5])
+
         <div class="clear"></div>
     </div><!--//col-left-->
     @include('frontend.right')
