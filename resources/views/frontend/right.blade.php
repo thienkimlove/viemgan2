@@ -33,7 +33,7 @@
                             </div>
                         @endforeach
                     </div>
-                    @include('frontend.banner', ['bannerPosition' => 3])
+               
                 @endif
             </div>
         </div>
@@ -54,7 +54,7 @@
     @else
         @include('frontend.most_read_normal')
     @endif
-   
+
 
     
 
