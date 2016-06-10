@@ -50,7 +50,7 @@
             <div class="clear"></div>
         </div><!--//box-form-->
         <ul class="listButton cf">
-          <li class="ilocal"><a href="#">Xem di?m b�n</a></li>
+          <li class="ilocal"><a href="#">Xem điểm bán</a></li>
           <li class="icall"><a href="#">1900 6482 - 0912 571 190</a></li>
         </ul>
 
