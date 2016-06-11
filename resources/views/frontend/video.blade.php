@@ -26,7 +26,7 @@
                     <div class="data">
                         <div class="item">
                             <div class="block-m">
-                               {!! $video->code !!}}
+                               {!! $video->code !!}
                             </div>
                         </div>
                     </div>
