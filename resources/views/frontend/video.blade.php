@@ -19,7 +19,7 @@
                     <h2 class="title">
                         <span>Main Video</span>
                     </h2>
-                    <div>{!! $mainVideo->code !!}}</div>
+                    <div>{!! $mainVideo->code !!}</div>
                 @endif
 
                 @foreach ($videos as $video)
