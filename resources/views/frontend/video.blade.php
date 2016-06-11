@@ -26,7 +26,7 @@
                     <div class="data">
                         <div class="item">
                             <div class="block-m">
-                               <img src="{{url('image-cached/size1', $video->image)}}" />
+                               {!! $video->code !!}
                             </div>
                         </div>
                     </div>
