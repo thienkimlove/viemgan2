@@ -6,25 +6,28 @@
     <div class="box-medicine cf">
         <div class="data">
             <div class="item">
-                @if ($post = $mostReads->shift())
-                    <div class="block-m">
-                        <a href="{{url($post->slug . '.html')}}" class="thumb-img">
-                            <img src="{{url('image-cached/size2/' .$post->image)}}" />
-                        </a>
+                @if (empty($page) || ($page != 'index'))
+                    @if ($post = $mostReads->shift())
+                        <div class="block-m">
+                            <a href="{{url($post->slug . '.html')}}" class="thumb-img">
+                                <img src="{{url('image-cached/size2/' .$post->image)}}"/>
+                            </a>
 
-                        <h3>
-                            <a href="{{url($post->slug . '.html')}}" class="thumb">{{str_limit($post->title, 40)}}</a>
-                        </h3>
+                            <h3>
+                                <a href="{{url($post->slug . '.html')}}"
+                                   class="thumb">{{str_limit($post->title, 40)}}</a>
+                            </h3>
 
-                        <p>
-                            {{str_limit($post->desc,70)}}
-                        </p>
-                    </div>
+                            <p>
+                                {{str_limit($post->desc,70)}}
+                            </p>
+                        </div>
+                    @endif
                 @endif
                 @foreach ($mostReads as $post)
                     <div class="list-medicine">
                         <a href="{{url($post->slug . '.html')}}" class="thumb">
-                            <img src="{{url('image-cached/size1/' .$post->image)}}" />
+                            <img src="{{url('image-cached/size1/' .$post->image)}}"/>
                         </a>
 
                         <h3><a href="{{url($post->slug . '.html')}}">{{str_limit($post->title, 40)}}</a></h3>
