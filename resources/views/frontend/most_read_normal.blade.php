@@ -1,4 +1,4 @@
-<div class="right-in">
+﻿<div class="right-in" id="sidebar">
     <h3 class="title">
         <span class="red">Bài viết đọc nhiều nhất</span>
     </h3>

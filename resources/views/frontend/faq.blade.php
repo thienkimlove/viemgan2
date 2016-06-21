@@ -1,15 +1,15 @@
-@extends('frontend')
+﻿@extends('frontend')
 
 @section('content')
-    <div class="main-content">
+    
         <div class="main-content">
+            <ul class="breadCrumb cf">
+                <li><a href="{{url('/')}}">HOME</a></li>
+                <li class="active">Hỏi đáp</li>
+            </ul>
             <div class="col-left">
-                <ul class="breadCrumb cf">
-                    <li><a href="{{url('/')}}">HOME</a></li>
-                    <li class="active">Hỏi đáp</li>
-                </ul>
                 <div class="title">
-                    <span>Hỏi đáp</span>
+                    <span class="news-title">Hỏi đáp</span>
                 </div>
                 <div class="box-faq">
                     <?php $i = 0; ?>
@@ -45,6 +45,4 @@
             @include('frontend.right')
             <div class="clear"></div>
         </div>
-
-    </div>
 @endsection

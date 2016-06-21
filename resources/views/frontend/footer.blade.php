@@ -1,4 +1,4 @@
-﻿<footer class="footer">
+﻿<footer class="footer" id="footer">
     <div class="fix">
         <div class="boxFooter clearFix">
             <div class="areaSocial">
@@ -26,6 +26,9 @@
             </div>
         </div>
     </div>
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-570f69bb385fe2f2"></script>
+
     <div class="copyRight">
         <div class="container">
             <p class="copy">MỌI THÔNG TIN ĐỀU BẢN QUYỀN ĐỀU THUỘC VỀ VIEMGAN.COM.VN</p>

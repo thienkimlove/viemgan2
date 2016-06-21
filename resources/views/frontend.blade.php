@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi" data-ng-app="Application">
 <head>
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'/>
@@ -56,24 +56,6 @@ window._fbq.push(['track', '6030780499151', {'value':'0.00','currency':'VND'}]);
 <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6030780499151&amp;cd[value]=0.00&amp;cd[currency]=VND&amp;noscript=1" /></noscript>	
 </head>
 <body class="home" data-ng-controller="MainController">
-<div id="fb-root"></div>
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '1569708656596422',
-            xfbml      : true,
-            version    : 'v2.5'
-        });
-    };
-
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
 <div class="wrapper" id="wrapper">
     @include('frontend.header')
     @include('frontend.nav')
@@ -91,6 +73,7 @@ window._fbq.push(['track', '6030780499151', {'value':'0.00','currency':'VND'}]);
 
 </script>
 <script type="text/javascript" src="{{url('/js/frontend.js')}}"></script>
+<script type="text/javascript" src="{{url('/js/fixedsidebar.js')}}"></script>
 <script type="text/javascript" src="{{url('/js/frontend-custom.js')}}"></script>
 <script type='text/javascript'>window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;t.push(["_setAccount",13099]);var n=e.location.protocol=="https:"?"https:":"http:";var r=document.createElement("script");r.type="text/javascript";r.async=true;r.src=n+"//static.subiz.com/public/js/loader.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)}(window);</script>
 <script type="text/javascript" src="//admicro1.vcmedia.vn/cpa/admicro.js"></script><script type="text/javascript">window.admicro_cpa_q = window.admicro_cpa_q || [];window.admicro_cpa_q.push({event: "retargeting", id: 1633});

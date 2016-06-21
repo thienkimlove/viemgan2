@@ -3,13 +3,14 @@
 @section('content')
 
 <div class="main-content">
-    <div class="col-left">
-
-        <ul class="breadCrumb cf">
+    <ul class="breadCrumb cf">
             <li><a href="{{url('/')}}">HOME</a></li>
             <li><a href="{{url('chuyen-muc', $post->category->slug)}}"><span>{{$post->category->name}}</span></a></li>
             <li class="active">{{$post->title}}</li>
         </ul>
+    <div class="col-left">
+
+        
 
         <!-- <div class="title">
             <span>{{$post->category->name}}</span>
@@ -30,16 +31,13 @@
             </div>
             {!!$post->content!!}
         </article><!--//box-detail-->
-		 <ul class="listButton cf">
+         <ul class="listButton cf">
           <li class="ilocal"><a href="#">Xem điểm bán</a></li>
           <li class="icall"><a href="#">1900 6482 - 0912 571 190</a></li>
         </ul>
         @include('frontend.banner', ['bannerPosition' => 4])
-
-        <div class="box-share">
-            <div class="item">
-                <div class="fb-like" data-href="http://www.viemgan.com.vn" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-        </div>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_native_toolbox"></div>
             <div class="item">
                 <div class="g-plusone" data-size="medium"></div>
             </div>
@@ -49,6 +47,7 @@
       @include('frontend.post_tag', ['tags' => $post->tags])
       @endif
         @include('frontend.tin_lien_quan', ['related' => $related, 'additionPost' => $additionPost])
+		</div>
         <div class="box-form">
             <div class="fb-comments" data-href="{{url($post->slug.'.html')}}" data-numposts="5" data-colorscheme="light"></div>
             <div class="clear"></div>

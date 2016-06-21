@@ -1,4 +1,7 @@
-﻿<header class="header" data-ng-controller="HeaderController">
+﻿<div class="hotLine sp">
+    <img src="images/hot.png" alt="Hot">
+  </div>
+<header class="header" data-ng-controller="HeaderController">
     <div class="header-mid">
         <div class="fix">
             

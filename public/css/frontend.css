@@ -5,6 +5,14 @@
   url("../font/open-sans.woff") format("woff"),
   url("../font/open-sans.ttf") format("truetype");
 }*/
+@font-face {
+  font-family: "helvetica";
+  src: url("../font/helvetica.eot?") format("eot"),
+  url("../font/helvetica.woff") format("woff"),
+  url("../font/helvetica.ttf") format("truetype");
+}
+
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -27,7 +35,8 @@ time, mark, audio, video {
 }
 
 body {
-  font: 400 13px Arial, sans-serif;
+  font-family: "helvetica";
+  font-size: 14px;
   line-height: 1.42;
   color: #333333;
 }
@@ -129,6 +138,21 @@ iframe[name='google_conversion_frame'] {
 .wrapper {
   overflow: hidden;
 }
+.pc {
+  display: block;
+}
+
+.sp {
+  display: none;
+}
+.hotLine {
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 10px 0 10px 10px;
+  z-index: 9999;
+}
 
 .cf:before, .fix:before, .main-content .col-left .news-type:before, .box-event .item:before, .box-filter:before, .cf:after, .fix:after, .main-content .col-left .news-type:after, .box-event .item:after, .box-filter:after, .menu-left .inner .nav-mobile > li.has-sub > a:after, .main-content .col-left .news-type li.active a:after {
   display: table;
@@ -165,7 +189,16 @@ iframe[name='google_conversion_frame'] {
 .wrapper {
   position: relative;
 }
+#sidebar {
+  width: 300px;
+  position: absolute;
+}
 
+#sidebar.fixed {
+  position: fixed;
+  top: 50px;
+  color: green;
+}
 .menu-left .inner .btn-menu {
   display: block;
   text-indent: -9900px;
@@ -1137,6 +1170,20 @@ iframe[name='google_conversion_frame'] {
   background: #f3f3f3;
   padding: 10px;
 }
+.box-detail table {
+  width: 100%;
+  border: 2px solid #e5a300;
+}
+.box-detail table strong {
+  font-size: 15px;
+}
+.box-detail table strong a {
+  color: #e5a300;
+}
+.box-detail table td {
+  vertical-align: top;
+  padding: 10px;
+}
 .box-detail .utility {
   padding-bottom: 10px;
   border-bottom: 1px solid #e8e8e8;
@@ -1840,6 +1887,11 @@ iframe[name='google_conversion_frame'] {
   /* margin-bottom: 15px; */
   font-weight: bold;
   font-size: 16px;
+}
+.title .news-title {
+  display: block;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 .title span {
   background: #1fa007;
@@ -3308,11 +3360,25 @@ iframe[name='google_conversion_frame'] {
   }
 }
 @media screen and (max-width: 540px) {
+  .pc {
+    display: none;
+  }
+  .sbzon {
+    display: none !important;
+  }
+  #sidebar.fixed {
+    position: relative;
+  }
+  .sp {
+    display: block;
+  }
   .main-content .col-left .list-product .item {
     width: 100%;
     margin-left: 0;
   }
-
+  .box-medicine .data {
+    width: 100%;
+  }
   .box-medicine .data .item {
     width: 100%;
   }
