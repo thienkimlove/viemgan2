@@ -1,5 +1,5 @@
 ﻿<div class="hotLine sp">
-    <img src="images/hot.png" alt="Hot">
+    <img src="{{url('images/hot.png')}}" alt="Hot">
   </div>
 <header class="header" data-ng-controller="HeaderController">
     <div class="header-mid">
