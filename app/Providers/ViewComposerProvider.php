@@ -27,7 +27,7 @@ class ViewComposerProvider extends ServiceProvider {
         });
 
         view()->composer('frontend.most_read_normal', function ($view) {
-            $view->with('mostReads', Post::where('status', true)->hot()->latest()->take(4)->get());
+            $view->with('mostReads', Post::where('status', true)->hot()->latest()->take(5)->get());
         });
 
         view()->composer('frontend.most_rates', function ($view) {

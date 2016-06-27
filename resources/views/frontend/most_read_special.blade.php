@@ -1,6 +1,6 @@
 <div class="right-in">
     <h3 class="title">
-        <span class="red">Bài viết đọc nhiều nhất</span>
+        <span class="red"><a href="{{url('chuyen-muc', 'kinh-nghiem')}}">Bài viết đọc nhiều nhất</a></span>
     </h3>
 
     <div class="box-medicine cf">

@@ -8,7 +8,7 @@
             @if ($first = $rootBlock['posts']->shift())
             <article class="item-summary">
                 <h3 class="title">
-                    <span>Các bệnh về gan</span>
+                    <span><a href="{{url('chuyen-muc', 'cac-benh-ve-gan')}}">Các bệnh về gan</a></span>
                 </h3>
                 <a href="{{url($first->slug.'.html')}}" title="" class="thumb-img">
                     <img src="{{url('image-cached/size8/' .$first->image)}}" />
@@ -34,7 +34,7 @@
             @if ($first = $top1Block['posts']->shift())
                 <article class="item-summary">
                     <h3 class="title">
-                        <span>Thông tin khoa học</span>
+                        <span><a href="{{url('chuyen-muc', 'thong-tin-khoa-hoc')}}">Thông tin khoa học</a></span>
                     </h3>
                     <a href="{{url($first->slug.'.html')}}" title="" class="thumb-img">
                         <img src="{{url('image-cached/size8/' .$first->image)}}" />

@@ -3,7 +3,7 @@
         <div class="right-in">
             <h3 class="title">
               <span class="gray">
-              Góc Video
+              <a href="{{url('video')}}">Góc Video</a>
               </span>
             </h3>
 

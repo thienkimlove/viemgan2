@@ -1,7 +1,7 @@
 ﻿<div class="right-in">
     <h1 class="title">
               <span class="gray">
-                Hỏi Đáp
+                <a href="{{url('hoi-dap')}}">Hỏi Đáp</a>
               </span>
     </h1>
 
