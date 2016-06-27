@@ -1,4 +1,4 @@
-﻿<div class="hotLine sp">
+<div class="hotLine sp">
     <img src="{{url('images/hot.png')}}" alt="Hot">
   </div>
 <header class="header" data-ng-controller="HeaderController">

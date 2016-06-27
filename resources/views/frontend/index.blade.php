@@ -1,4 +1,4 @@
-﻿@extends('frontend')
+@extends('frontend')
 
 @section('content')
 @include('frontend.top_news', ['latestPost' => $latestPost])

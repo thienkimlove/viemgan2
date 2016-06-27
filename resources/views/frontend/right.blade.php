@@ -1,4 +1,4 @@
-﻿<div class="col-right">
+<div class="col-right">
     @if ($firstVideo = $videos->shift())
         <div class="right-in">
             <h3 class="title">

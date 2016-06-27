@@ -1,4 +1,4 @@
-﻿<div class="right-in" id="sidebar">
+<div class="right-in" id="sidebar">
     <h3 class="title">
         <span class="red"><a href="{{url('chuyen-muc', 'kinh-nghiem')}}">Bài viết đọc nhiều nhất</a></span>
     </h3>

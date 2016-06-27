@@ -1,4 +1,4 @@
-﻿<div class="right-in">
+<div class="right-in">
     <h1 class="title">
               <span class="gray">
                 <a href="{{url('hoi-dap')}}">Hỏi Đáp</a>
