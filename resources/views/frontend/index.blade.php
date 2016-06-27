@@ -11,7 +11,7 @@
                     <span>Các bệnh về gan</span>
                 </h3>
                 <a href="{{url($first->slug.'.html')}}" title="" class="thumb-img">
-                    <img src="{{url('image-cached/size2/' .$first->image)}}" />
+                    <img src="{{url('image-cached/size8/' .$first->image)}}" />
                 </a>
                 <h3>{{str_limit($first->title, 50)}}</h3>
                 <p>{{str_limit($first->desc, 150)}}</p>
@@ -37,7 +37,7 @@
                         <span>Thông tin khoa học</span>
                     </h3>
                     <a href="{{url($first->slug.'.html')}}" title="" class="thumb-img">
-                        <img src="{{url('image-cached/size2/' .$first->image)}}" />
+                        <img src="{{url('image-cached/size8/' .$first->image)}}" />
                     </a>
                     <h3>{{str_limit($first->title, 50)}}</h3>
                     <p>{{str_limit($first->desc, 150)}}</p>

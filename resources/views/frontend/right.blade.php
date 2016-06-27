@@ -3,7 +3,9 @@
         <div class="right-in">
             <h3 class="title">
               <span class="gray">
-              Góc Video             </span>            </h3>
+              Góc Video
+              </span>
+            </h3>
 
             <div class="box-video">
                 <div class="videoBoxIn">
