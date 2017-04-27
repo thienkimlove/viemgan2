@@ -1,4 +1,4 @@
-@extends('admin')
+﻿@extends('admin')
 @section('content')
     @include('admin.post.heading')
     <div class="row" data-ng-controller="PostIndex">
@@ -48,10 +48,15 @@
                                     <td>{{($post->right) ? 'Yes' : 'No'}}</td>
                                     <td>{{($post->status) ? 'Yes' : 'No'}}</td>
                                     <td>
-                                        <button class="btn btn-primary btn-sm" data-ng-click="goUrl('/posts/{{$post->id}}/edit')" type="button">Edit</button>&nbsp;
+                                        <button class="btn btn-primary btn-sm" data-ng-click="goUrl('/posts/{{$post->id}}/edit')" type="button">Edit</button>
                                         <br>
                                         {!! Form::open(['method' => 'DELETE', 'route' => ['admin.posts.destroy', $post->id]]) !!}
+                                        <br>
                                         <button type="submit" class="btn btn-danger btn-mini">Delete</button>
+                                        <br><br>
+					<button class="btn btn-primary btn-sm" type="button">
+                                        <a target="_blank" href="{{url($post->slug.'.html')}}" style="color:#FFFFFF">View Post</a>
+                                        </button>
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>

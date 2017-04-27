@@ -1,7 +1,7 @@
 <div class="right-in" id="sidebar">
-    <h3 class="title">
+    <h2 class="title">
         <span class="red"><a href="{{url('chuyen-muc', 'kinh-nghiem')}}">Bài viết đọc nhiều nhất</a></span>
-    </h3>
+    </h2>
 
     <div class="box-medicine cf">
         <div class="data">

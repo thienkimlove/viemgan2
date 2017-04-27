@@ -264,4 +264,13 @@ class MainController extends Controller
         return \Response::json([]);
     }
 
+    public function sitemap()
+    {
+        $posts = Post::where('status', true)->orderBy('updated_at', 'desc')->get();
+
+        return response()->view('sitemap', [
+            'posts' => $posts
+        ])->header('Content-Type', 'text/xml');
+    }
+
 }

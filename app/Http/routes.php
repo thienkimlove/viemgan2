@@ -57,6 +57,7 @@ Route::get('/video/{value?}', 'MainController@video');
 Route::get('admin', 'AdminController@index');
 Route::get('chuyen-muc/{tag}', 'MainController@categoryDetails');
 Route::get('tu-khoa/{tag}', 'MainController@tag');
+Route::get('/sitemap', 'MainController@sitemap');
 
 /*
  * for searching

@@ -1,9 +1,9 @@
 <div class="right-in">
-    <h1 class="title">
+    <h2 class="title">
               <span class="gray">
                 <a href="{{url('hoi-dap')}}">Hỏi Đáp</a>
               </span>
-    </h1>
+    </h2>
 
     <div class="box-question cf">
         <div class="data">

@@ -44,11 +44,12 @@
                                 <td>{{($post->status) ? 'Yes' : 'No'}}</td>
 
                                 <td>
-                                    <button class="btn btn-primary btn-sm" data-ng-click="goUrl('/posts/{{$post->id}}/edit')" type="button">Edit</button>&nbsp;
+                                    <button class="btn btn-primary btn-sm" data-ng-click="goUrl('/posts/{{$post->id}}/edit')" type="button">Edit</button><br />
                                     <br>
                                     {!! Form::open(['method' => 'DELETE', 'route' => ['admin.posts.destroy', $post->id]]) !!}
-                                    <button type="submit" class="btn btn-danger btn-mini">Delete</button>
+                                    <button type="submit" class="btn btn-danger btn-mini">Delete</button><br /><br />
                                     {!! Form::close() !!}
+									 <button class="btn btn-primary btn-sm" type="button"><a target="_blank" href="{{url($post->slug.'.html')}}" style="color:#FFFFFF">View Post</a> </button>
                                 </td>
                             </tr>
                             @endforeach

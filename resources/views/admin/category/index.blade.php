@@ -30,8 +30,10 @@
                                 @endif
                                 <td>{{ ($cat->parent_id) ? 'Con' : 'Cha'}}</td>
                                 <td>
-                                    <button class="btn btn-primary btn-sm" data-ng-click="goUrl('/categories/{{$cat->id}}/edit')" type="button">Edit</button>&nbsp;
-                                    <button class="btn btn-primary btn-sm" type="button">Delete</button>
+                                <button class="btn btn-primary btn-sm" data-ng-click="goUrl('/categories/{{$cat->id}}/edit')" type="button">Edit</button><br/>
+								<br />
+                                 <button class="btn btn-primary btn-sm" type="button">Delete</button>
+								 
                                 </td>
                             </tr>
                             @endforeach

@@ -33,7 +33,7 @@
         <div class="container">
             <p class="copy">MỌI THÔNG TIN ĐỀU BẢN QUYỀN ĐỀU THUỘC VỀ VIEMGAN.COM.VN</p>
             <p class="address">
-                Điện thoại: 1900 6482 - 0912 571 190 </p>
+                Điện thoại: 1800 1190 - 0912 571 190 </p>
         </div>
     </div>
 </footer>

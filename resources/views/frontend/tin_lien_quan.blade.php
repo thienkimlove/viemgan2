@@ -12,7 +12,7 @@
         @foreach ($additionPost as $post)
             <article class="item cf">
                 <h3>
-                    <a href="{{url($post->slug.'.html')}}" title="{{$post->title}}">{{str_limit($post->title, 50)}}</a>
+                    <a href="{{url($post->slug.'.html')}}" title="{{$post->title}}">{{str_limit($post->title, 55)}}</a>
                 </h3>
             </article>
         @endforeach

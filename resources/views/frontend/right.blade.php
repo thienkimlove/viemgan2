@@ -1,11 +1,11 @@
 <div class="col-right">
     @if ($firstVideo = $videos->shift())
         <div class="right-in">
-            <h3 class="title">
+            <h2 class="title">
               <span class="gray">
               <a href="{{url('video')}}">Góc Video</a>
               </span>
-            </h3>
+            </h2>
 
             <div class="box-video">
                 <div class="videoBoxIn">
@@ -56,12 +56,5 @@
     @else
         @include('frontend.most_read_normal')
     @endif
-
-
-    
-
-    
-    
-    
 
 </div><!--//col-right-->

@@ -7,9 +7,9 @@
         <div class="box-summary cf">
             @if ($first = $rootBlock['posts']->shift())
             <article class="item-summary">
-                <h3 class="title">
+                <h2 class="title">
                     <span><a href="{{url('chuyen-muc', 'cac-benh-ve-gan')}}">Các bệnh về gan</a></span>
-                </h3>
+                </h2>
                 <a href="{{url($first->slug.'.html')}}" title="" class="thumb-img">
                     <img src="{{url('image-cached/size8/' .$first->image)}}" />
                 </a>
@@ -33,9 +33,9 @@
         <div class="box-summary cf">
             @if ($first = $top1Block['posts']->shift())
                 <article class="item-summary">
-                    <h3 class="title">
+                    <h2 class="title">
                         <span><a href="{{url('chuyen-muc', 'thong-tin-khoa-hoc')}}">Thông tin khoa học</a></span>
-                    </h3>
+                    </h2>
                     <a href="{{url($first->slug.'.html')}}" title="" class="thumb-img">
                         <img src="{{url('image-cached/size8/' .$first->image)}}" />
                     </a>
@@ -56,9 +56,9 @@
 
         </div>
         <div class="box-medicine cf">
-            <h3 class="title">
+            <h2 class="title">
                 <a href="{{url('chuyen-muc', $top2Block['category']->slug)}}"><span>{{$top2Block['category']->name}}</span></a>
-            </h3>
+            </h2>
 
             <div class="data">
                 <div class="item">

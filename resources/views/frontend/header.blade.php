@@ -1,18 +1,19 @@
-<div class="hotLine sp">
+﻿<div class="hotLine sp">
     <img src="{{url('images/hot.png')}}" alt="Hot">
   </div>
+  <meta property="fb:app_id" content="1569708656596422"/>
 <header class="header" data-ng-controller="HeaderController">
     <div class="header-mid">
         <div class="fix">
             
-                <a href="" title="" class="logo"><img src="{{url('images/logo.png')}}" alt="Giải độc gan"></a>
+                <h1 class="site-title"><a href="http://www.viemgan.com.vn" title="giải độc gan, viêm gan, xơ gan" class="logo" rel="home"><img src="{{url('images/logo.png')}}" alt="giải độc gan, viêm gan, xơ gan"></a></h1>
             
             <div class="slogan" align="center">
                 <img src="{{url('images/slogan.png')}}" alt="Slogan">
             </div>
             <div class="area-social cf">
-                <div class="social">
-                  <img src="{{url('images/contact.jpg')}}" alt="">
+                <div class="social pc">
+                  <img src="{{url('images/contact.jpg')}}" alt="hotline">
                 </div>
                 <!-- <ul class="social">
                     <li>

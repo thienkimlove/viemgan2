@@ -31,10 +31,39 @@
                 {!!$post->content!!}
             </article><!--//box-detail-->
             <ul class="listButton cf">
-                <li class="ilocal"><a href="#">Xem điểm bán</a></li>
-                <li class="icall"><a href="#">1900 6482 - 0912 571 190</a></li>
+                <li class="ilocal"><a href="http://www.viemgan.com.vn/chuyen-muc/diem-ban">Điểm bán</a></li>
+                <li class="icall"><a href="tel:18001190">1800 1190 </a></li>
             </ul>
             @include('frontend.banner', ['bannerPosition' => 4])
+
+<!-- Facebook Code Comment-->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1569708656596422',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=1569708656596422";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- Facebook Code Comment-->
 
             <div class="box-share">
                 <div class="item">
@@ -50,7 +79,7 @@
             @endif
             @include('frontend.tin_lien_quan', ['related' => $related, 'additionPost' => $additionPost])
             <div class="box-form">
-                <div class="fb-comments" data-href="{{url($post->slug.'.html')}}" data-numposts="5" data-colorscheme="light"></div>
+                <div class="fb-comments" data-href="{{url($post->slug.'.html')}}" data-numposts="5"></div>
                 <div class="clear"></div>
             </div><!--//box-form-->
             <div class="box-medicine cf">
